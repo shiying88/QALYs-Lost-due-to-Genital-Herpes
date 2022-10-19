@@ -240,14 +240,6 @@ class ParametersTypeOne(Parameters):
         # DISUTILITY #
         ##############
         # disutilities for primary, recurrent, and common complications are defined in parent class
-        # encephalitis at later age
-        # self.ence_disu = BetaValueGenerator(mean=0.13, stdv=0.0255, note='disutility due to acute encephalitis')
-        # self.ence_mil_disu = BetaValueGenerator(mean=0.03, stdv=0.0075, note='mild long-term sequelae of encephalitis')
-        # self.ence_mod_disu = BetaValueGenerator(mean=0.20, stdv=0.04,
-        #                                         note='moderate long-term sequelae of encephalitis')
-        # self.ence_sev_disu = BetaValueGenerator(mean=0.54, stdv=0.0825,
-        #                                         note='severe long-term sequelae of encephalitis')
-        # self.ence_dead_disu = 1
 
         ############
         # DURATION #
@@ -258,11 +250,6 @@ class ParametersTypeOne(Parameters):
             LogNormalValueGenerator(mean=7/365, stdv=2.15/365, note='duration of recurrent sympt outbreak (treated)')
         # complications
         # urinary retention & aseptic meningitis (in parent class)
-        # # encephalitis
-        # self.ence_duration = LogNormalValueGenerator(mean=25 / 365, stdv=2.5 / 365, note='duration of encephalitis')
-        # self.ence_sev_life_expectancy = \
-        #     LogNormalValueGenerator(mean=3.8, stdv=1.25,
-        #                             note='life expectancy for people with severe neurological sequelae after ence')
 
         ##################
         # INITIALIZATION #
@@ -274,16 +261,6 @@ class ParametersTypeOne(Parameters):
         self.nor_am_ur_after_primary_prob_sample = None
         # urinary retention, recurrent period
         self.urinary_retention_recur_prob_sample = None
-        # # encephalitis
-        # self.ence_elderly_prob_sample = None
-        # self.ence_sequelae_prob_sample = None
-        # self.ence_disu_sample = 0
-        # self.ence_mil_disu_sample = 0
-        # self.ence_mod_disu_sample = 0
-        # self.ence_sev_disu_sample = 0
-        # self.ence_duration_sample = 0
-        # self.ence_sev_mort_dur_sample = 0
-        # self.ence_sev_life_expectancy_sample = 0
 
     def resample_hsv1_non_age_sex_params(self, rng):
         self.resample_non_age_sex_params(rng=rng)
@@ -312,15 +289,6 @@ class ParametersTypeOne(Parameters):
         # Recurrent period
         # urinary retention during recurrent period
         self.urinary_retention_recur_prob_sample = self.urinary_retention_recur_prob.sample(rng=rng)
-        # # encephalitis at age of 60
-        # num_ence_case_sample = self.num_ence_case.sample(rng=rng) / 1000000
-        # hsv1_id = self.incidence.genital_id_sample
-        # hsv1_ence = self.hsv1_ence.sample(rng=rng)
-        # adult_ence = self.adult_ence.sample(rng=rng)
-        # pop_size = 327115193
-        # self.ence_elderly_prob_sample = hsv1_ence * adult_ence * num_ence_case_sample * pop_size / hsv1_id
-        # # self.ence_elderly_prob_sample = self.ence_elderly_prob.sample(rng=rng)
-        # self.ence_sequelae_prob_sample = self.ence_outcomes.sample(rng=rng)
 
         # SUMMARY LIST
         # primary infection diagnosis [undiagnosed vs. diagnosed] (parent class)
@@ -339,10 +307,6 @@ class ParametersTypeOne(Parameters):
         # Disutility #
         ##############
         # # primary infection and associated complication, recurrent period and associated complication (parent class)
-        # self.ence_disu_sample = self.ence_disu.sample(rng=rng)
-        # self.ence_mil_disu_sample = self.ence_mil_disu.sample(rng=rng)
-        # self.ence_mod_disu_sample = self.ence_mod_disu.sample(rng=rng)
-        # self.ence_sev_disu_sample = self.ence_sev_disu.sample(rng=rng)
 
         ############
         # Duration #
@@ -352,8 +316,6 @@ class ParametersTypeOne(Parameters):
         # recurrent period
         self.recur_treat_duration_sample = self.recur_treat_duration.sample(rng=rng)
         # complication (parent class - urinary retention & aseptic meningitis)
-        # self.ence_duration_sample = self.ence_duration.sample(rng=rng)
-        # self.ence_sev_life_expectancy_sample = self.ence_sev_life_expectancy.sample(rng=rng)
 
     def resample_hsv1_sex_params(self, sex, rng):
         # self.resample_sex_params(sex=sex, rng=rng)
