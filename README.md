@@ -4,7 +4,7 @@ This repository includes codes to run model simulations and to visualize simulat
 
 
 ### Packages
-All analyses were conducted in Python 3.8 on MacOS using packages including [NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), [SciPy](https://scipy.org/), [statsmodles](https://www.statsmodels.org/stable/index.html), [Matplotlib](https://matplotlib.org/), and [SimPy](https://github.com/yaesoubilab/SimPy) ([the version](https://github.com/yaesoubilab/SimPy/commit/f8a0249c1c384fdfb2e4520a79cab3e985652b10) committed on 2021 July)
+All analyses were conducted in Python 3.8 on MacOS using packages including [NumPy](https://numpy.org/), [Pandas](https://pandas.pydata.org/), [SciPy](https://scipy.org/), [statsmodles](https://www.statsmodels.org/stable/index.html), [Matplotlib](https://matplotlib.org/), and [SimPy](https://github.com/yaesoubilab/SimPy) ([the version committed on 2021 July](https://github.com/yaesoubilab/SimPy/commit/f8a0249c1c384fdfb2e4520a79cab3e985652b10))
 
 
 ### Organization of The Repository
