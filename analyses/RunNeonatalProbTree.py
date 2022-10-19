@@ -1,14 +1,13 @@
 import numpy as np
 import pickle
 from classes import DecisionTreeClass as dt
-from New_HSV_tree.ParameterClass import ParametersNeonatal
-from New_HSV_tree.ProbTreeClasses import buildNeonatalTree
+from classes.ParameterClass import ParametersNeonatal
+from classes.ProbTreeClasses import buildNeonatalTree
 from SimPy.Statistics import SummaryStat
 
 # Parameter initiation
 DISCOUNT = 0.03     # (float) discounting rate
 NUM_PSA = 1000      # (int) number of repetition for PSA
-output_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/trees/dics/'
 
 ###################
 # NEONATAL HERPES #
@@ -84,6 +83,6 @@ N_dic = {'simulation length': SIM_TIME,                                 # simula
          'm_loss_per_infection': maternal_qaly_loss_per_infection_avg,  # QALYs lost per infection: maternal
          'm_loss_total': maternal_qaly_loss_total_avg}                  # QALYs lost total: maternal
 # save output
-output = open('{}neonatalGH_20221010_15year.pkl'.format(output_path), 'wb')
+output = open('tree_outputs/dics/neonatalGH_{}.pkl'.format(SIM_TIME), 'wb')
 pickle.dump(N_dic, output)
 output.close()

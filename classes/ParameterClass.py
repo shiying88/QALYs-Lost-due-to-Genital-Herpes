@@ -1,5 +1,5 @@
 from supports.UtilityOrderingSupport import *
-from source.DemographicValues import get_adjusted_disu
+from supports.DemographicValuesSupport import get_adjusted_disu
 from supports.RandomValueGenerators import BetaValueGenerator, LogNormalValueGenerator, DirichletValueGenerator
 from supports.ParameterAndRecurrentPeriodSupport import separate_cst_helper, \
     life_table_get_long_term_loss_mixed_sex, life_table_get_long_term_loss

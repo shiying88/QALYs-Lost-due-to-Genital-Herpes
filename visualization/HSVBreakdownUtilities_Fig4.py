@@ -3,10 +3,10 @@ from SimPy.Statistics import SummaryStat
 from supports.VisualizationSupport import *
 
 # read dataset
-absolute_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/trees/component_utl/'
-output_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/visualization/graphs/'
-df_hsv1 = pd.read_csv('{}hsv1_dr3_psycho1_noGBD_20221010_dN100.csv'.format(absolute_path))
-df_hsv2 = pd.read_csv('{}hsv2_dr3_psycho1_noGBD_20221010_dN100.csv'.format(absolute_path))
+read_path = '/tree_outputs/component_utl/'
+output_path = 'visualization/graphs/'
+df_hsv1 = pd.read_csv('{}hsv1_dr3_psycho1_noGBD_20221010_dN100.csv'.format(read_path))
+df_hsv2 = pd.read_csv('{}hsv2_dr3_psycho1_noGBD_20221010_dN100.csv'.format(read_path))
 
 # enumerate component names, sex list, and age lists
 sex_list = ['male', 'female']
@@ -153,6 +153,6 @@ plt.suptitle('Breakdowns of QALYs lost per HSV infection by sex and viral type',
 
 # save file
 plt.tight_layout(rect=(0, 0, 1, 0.95))
-plt.savefig('{}breakdown_utl_hsv_psa1000_dr3_psycho1_noGBD_20221010.png'.format(output_path), dpi=600,
+plt.savefig('{}Fig4-breakdown_utilities.png'.format(output_path), dpi=600,
             bbox_inches='tight')
 plt.show()

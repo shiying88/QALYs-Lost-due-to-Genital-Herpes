@@ -1,12 +1,12 @@
 from supports.VisualizationSupport import *
 
 # outcomes: age_sex_specific_qaly, non_age_sex_qaly_avg, t_qaly_f_avg, t_qaly_m_avg, t_qaly_hsv_avg
-read_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/trees/dics/'
-output_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/visualization/graphs/'
+read_path = 'tree_outputs/dics/'
+output_path = 'visualization/graphs/'
 # read python dict back from the file
-pkl_file = open('{}DicHSV1_dr3_psycho1_noGBD_20221010_dN100.pkl'.format(read_path), 'rb')
+pkl_file = open('{}DicHSV1.pkl'.format(read_path), 'rb')
 hsv1_Dic = pickle.load(pkl_file)
-pkl2_file = open('{}DicHSV2_dr3_psycho1_noGBD_20221010_dN100.pkl'.format(read_path), 'rb')
+pkl2_file = open('{}DicHSV2.pkl'.format(read_path), 'rb')
 hsv2_Dic = pickle.load(pkl2_file)
 pkl_file.close()
 pkl2_file.close()
@@ -62,5 +62,5 @@ plt.title('Age and sex specific QALYs lost per HSV infection (2018)',
           fontsize=10)
 # save file
 plt.tight_layout()
-plt.savefig('{}main_age-sex-specific_per_case_20221010.png'.format(output_path), dpi=350, bbox_inches='tight')
+plt.savefig('{}Fig3-age-sex-specific-per-case.png'.format(output_path), dpi=350, bbox_inches='tight')
 plt.show()

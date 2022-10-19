@@ -1,12 +1,12 @@
 from supports.VisualizationSupport import *
 
-read_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/trees/dics/'
-output_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/visualization/graphs/'
+read_path = 'tree_outputs/dics/'
+output_path = 'visualization/graphs/'
 
 # read python dict back from the file
-pkl_file = open('{}DicHSV1_dr3_psycho1_noGBD_20221010_dN100.pkl'.format(read_path), 'rb')
+pkl_file = open('{}DicHSV1.pkl'.format(read_path), 'rb')
 hsv1_Dic = pickle.load(pkl_file)
-pkl2_file = open('{}DicHSV2_dr3_psycho1_noGBD_20221010_dN100.pkl'.format(read_path), 'rb')
+pkl2_file = open('{}DicHSV2.pkl'.format(read_path), 'rb')
 hsv2_Dic = pickle.load(pkl2_file)
 pkl_file.close()
 pkl2_file.close()
@@ -53,6 +53,6 @@ plt.ylabel('Total QALYs lost (thousand)', **{'fontname': 'Times New Roman'}, fon
 
 # save file
 plt.tight_layout()
-plt.savefig('{}total_loss_20221010.png'.format(output_path), dpi=350, bbox_inches='tight')
+plt.savefig('{}Fig5-total_loss.png'.format(output_path), dpi=350, bbox_inches='tight')
 plt.show()
 

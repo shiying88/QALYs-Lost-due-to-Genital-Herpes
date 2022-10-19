@@ -2,10 +2,10 @@ import pickle
 from SimPy.Statistics import SummaryStat
 
 # read data
-read_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/trees/dics/'
-pkl_file = open('{}DicHSV1_dr3_psycho1_noGBD_20221010_dN100.pkl'.format(read_path), 'rb')
+read_path = 'tree_outputs/dics/'
+pkl_file = open('{}DicHSV1.pkl'.format(read_path), 'rb')
 hsv1_dic = pickle.load(pkl_file)
-pkl_file = open('{}DicHSV2_dr3_psycho1_noGBD_20221010_dN100.pkl'.format(read_path), 'rb')
+pkl_file = open('{}DicHSV2.pkl'.format(read_path), 'rb')
 hsv2_dic = pickle.load(pkl_file)
 pkl_file.close()
 

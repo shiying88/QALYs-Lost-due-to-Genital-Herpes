@@ -1,7 +1,7 @@
 from supports.VisualizationSupport import *
 
-read_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/trees/dics/'
-output_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/visualization/graphs/'
+read_path = 'tree_outputs/dics/'
+output_path = 'visualization/graphs/'
 
 hsv1_main_per_case = 0.01403
 hsv1_main_total = 1925.52
@@ -81,5 +81,5 @@ plt.suptitle('One-way sensitivity analysis for key parameters',
 
 # save file
 plt.tight_layout(rect=(0, 0, 1, 0.95))
-plt.savefig('{}one_way_sensitivity_analysis_20221010.png'.format(output_path), dpi=350, bbox_inches='tight')
+plt.savefig('{}Fig7-one_way_sensitivity_analysis.png'.format(output_path), dpi=350, bbox_inches='tight')
 plt.show()

@@ -35,36 +35,35 @@ def buildHSV1Tree(params, age_of_infection, sex, discount):
                    'c9': [0, ur, {'ur': ur}, ['cn4', 'cr4'], params.list_recur_type_after_sympt_primary]
                    }
 
-    # no/undetected recurrences (ence=False is newly added during revision)
-    recur_no = RecurrentPeriodTypeOne(parameters=params, recur_type='no', ence=False,
+    # no/undetected recurrences
+    recur_no = RecurrentPeriodTypeOne(parameters=params, recur_type='no',
                                       age_of_infection=age_of_infection, sex=sex, discount=discount)
-    # infrequent recurrences (ence=False is newly added during revision)
-    recur_infreq = RecurrentPeriodTypeOne(parameters=params, recur_type='infrequent', ence=False,
+    # infrequent recurrences
+    recur_infreq = RecurrentPeriodTypeOne(parameters=params, recur_type='infrequent',
                                           age_of_infection=age_of_infection, sex=sex, discount=discount)
 
     # recurrent disutility component dictionary
-    # for the first version (before revision), include QALYs lost associated with ence: recur_no.ence_qaly
-    # during the first revision, exclude encephalitis, assuming it has a 0 loss.
+    # we exclude genital-HSV-1 associated encephalitis and assume QALYs lost associated with it equals 0
     # the dictionary is used to generate breakdown estimates.
-    total_loss_hsv1_components_no_recur = {'ence': recur_no.ence_qaly}
+    total_loss_hsv1_components_no_recur = {'ence': 0}
     total_loss_hsv1_components_infreq = {'psych': recur_infreq.psych_qaly,
                                          'recur': recur_infreq.recur_only_qaly,
                                          'ur': recur_infreq.ur_qaly,
-                                         'ence': recur_no.ence_qaly}
+                                         'ence': 0}
 
     # cost, disutility, component_disutility_dics
     dictTerminals = \
-        {'cn1': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],  # ence
-         'cn2': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],  # ence
-         'cn3': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],  # ence
-         'cn4': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],  # ence
-         'cn5': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],  # ence
+        {'cn1': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],
+         'cn2': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],
+         'cn3': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],
+         'cn4': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],
+         'cn5': [0, recur_no.total_loss_hsv1, total_loss_hsv1_components_no_recur],
          # recur type: infrequent recurrences
-         'cr1': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur + ence
-         'cr2': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur + ence
-         'cr3': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur + ence
-         'cr4': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur + ence
-         'cr5': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq]    # psycho + recur + ence
+         'cr1': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur
+         'cr2': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur
+         'cr3': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur
+         'cr4': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq],   # psycho + recur
+         'cr5': [0, recur_infreq.total_loss_hsv1, total_loss_hsv1_components_infreq]    # psycho + recur
          }
 
     # cost, utility, component_utility_dic, future_node

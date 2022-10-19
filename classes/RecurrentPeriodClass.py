@@ -1,4 +1,4 @@
-from source.DemographicValues import get_conditional_survival_rate, get_adjusted_disu
+from supports.DemographicValuesSupport import get_conditional_survival_rate, get_adjusted_disu
 from supports.ParameterAndRecurrentPeriodSupport import get_recur_initiate_rate_helper
 import math
 

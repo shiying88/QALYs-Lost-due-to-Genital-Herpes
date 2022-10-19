@@ -6,8 +6,6 @@ from supports.RunProbTreeSupport import get_summary_stats
 from classes.ParameterClass import ParametersTypeOne
 from classes.ProbTreeClasses import buildHSV1Tree
 
-output_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/trees'
-
 # Parameter initiation
 DISCOUNT = 0.03      # (float) discounting rate
 NUM_PSA = 1000       # (int) number of probability sensitivity analysis iterations
@@ -85,8 +83,8 @@ hsv1_Dic = {'age_sex_specific_qaly': age_sex_specific_qaly,  # age- and sex-spec
             'qaly_id_non_age_sex_list': qaly_id_non_age_sex_list}  # incidence
 
 # save QALYs lost outputs
-output = open('{}/dics/DicHSV1_dr3_psycho1_noGBD_20221010_dN100.pkl'.format(output_path), 'wb')
+output = open('tree_outputs/dics/DicHSV1.pkl', 'wb')
 pickle.dump(hsv1_Dic, output)
 output.close()
 # save component QALYs lost
-component_df.to_csv('{}/component_utl/hsv1_dr3_psycho1_noGBD_20221010_dN100.csv'.format(output_path))
+component_df.to_csv('tree_outputs/component_utl/hsv1.csv')

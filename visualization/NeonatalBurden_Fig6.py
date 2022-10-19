@@ -6,8 +6,7 @@ neonatal_color = '#5D62D5'
 maternal_color = '#2596be'
 
 # outcomes: age_sex_specific_qaly, non_age_sex_qaly_avg, t_qaly_f_avg, t_qaly_m_avg, t_qaly_hsv_avg
-output_path = '/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/visualization/graphs/'
-
+output_path = 'visualization/graphs/'
 sim_length = ['5 years', '10 years', '15 years', 'lifetime']
 
 # Neonatal + Maternal
@@ -72,6 +71,6 @@ ax[1].set_title('Total QALYs lost of neonatal HSV in the US (2018)',
 
 # save file
 plt.tight_layout()
-plt.savefig('{}neonatal_burden_20221010.png'.format(output_path), dpi=350, bbox_inches='tight')
+plt.savefig('{}Fig6-neonatal_burden.png'.format(output_path), dpi=350, bbox_inches='tight')
 plt.show()
 

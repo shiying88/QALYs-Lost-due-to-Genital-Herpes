@@ -1,4 +1,4 @@
-from source.DemographicValues import get_adjusted_disu
+from supports.DemographicValuesSupport import get_adjusted_disu
 import pandas as pd
 
 
@@ -64,7 +64,7 @@ def separate_cst_helper(np_array, cst_prob):
 
 def life_table_get_long_term_loss(sex, age_onset, seq_disu, discount, seq_dura=0,
                                   acute_sympt_disu=0, emort=0, emort_dura=None, tmort=0, if_utility=False):
-    """ calculate total QALYs loss for people with no/mild/moderate/severe sequelae due to encephalitis
+    """ calculate total QALYs loss for people with certain lifetime condition
     :param sex: 'female', or 'male', or 'general'
     :param age_onset: (float) age of disease onset
     :param acute_sympt_disu: disutility of having acute symptoms
@@ -77,11 +77,11 @@ def life_table_get_long_term_loss(sex, age_onset, seq_disu, discount, seq_dura=0
     :param if_utility: (bool) whether we calculate QALYs loss (using utility=false) or total QALYs (using utility=True)
     """
     if sex == 'female':
-        df = pd.read_csv('/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/data/life_table_for_qaly_female.csv')
+        df = pd.read_csv('source/data/life_table_for_qaly_female.csv')
     elif sex == 'male':
-        df = pd.read_csv('/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/data/life_table_for_qaly_male.csv')
+        df = pd.read_csv('source/data/life_table_for_qaly_male.csv')
     elif sex == 'general':
-        df = pd.read_csv('/Users/shiyingyou/PycharmProjects/HSV-QALY/New_HSV_tree/data/life_table_for_qaly.csv')
+        df = pd.read_csv('source/data/life_table_for_qaly.csv')
     else:
         raise ValueError('wrong type of sex input')
     # round age onset
