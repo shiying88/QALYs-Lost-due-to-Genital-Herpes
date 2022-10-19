@@ -1,4 +1,4 @@
-from supports.UtilityOrderingSupport import *
+from supports.UtilityOrderSupport import *
 from supports.DemographicValuesSupport import get_adjusted_disu
 from supports.RandomValueGenerators import BetaValueGenerator, LogNormalValueGenerator, DirichletValueGenerator
 from supports.ParameterAndRecurrentPeriodSupport import separate_cst_helper, \

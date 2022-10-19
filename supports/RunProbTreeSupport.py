@@ -52,7 +52,7 @@ def get_summary_stats(mf_utility_lists, mf_id_lists, age_list, sex_list, num_psa
         for age in age_list:
             avg = qaly_stat_dic[sex][age].get_formatted_mean_and_interval(deci=5, interval_type='p')
             age_sex_specific_qaly.append(avg)
-            print('QALYs loss per {} HSV infection with an avg age of {}:'.format(sex, age), avg)
+            # print('QALYs loss per {} HSV infection with an avg age of {}:'.format(sex, age), avg)
 
     # 2) QALYs loss per infection among the general population
     non_age_sex_qaly = []
