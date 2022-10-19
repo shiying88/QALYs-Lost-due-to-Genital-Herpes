@@ -8,12 +8,12 @@ All analyses were conducted in Python 3.8 on MacOS using packages including [Num
 
 
 ### Organization of The Repository
-- **analyses**: 
-- **classes**:
-- **source**:
-- **supports**:
-- **tree_outputs**:
-- **visualization**:
+- **analyses**: a folder consisting of python scripts to run probabilities trees for genital HSV-1, HSV-2, and neonatal herpes. The [QALYsLossPerHSV](https://github.com/shiying88/QALYs-Lost-due-to-Genital-Herpes/blob/main/analyses/QALYsLossPerHSV.py) generates the QALYs lost for one case and for total infections regardless of virus types.
+- **classes**: including classes to support runing probability trees for HSV infections.
+- **source**: consisting of US life tables and other demographic values for adjusting background utility, obtaining conditional survival rate, and estimating quality-adjusted life expectancy.
+- **supports**: including functions for simulating probability trees of genital herpes and plotting simulation outcomes.
+- **tree_outputs**: storing simulation outputs of genital herpes probability trees, including breakdowns of QALYs lost ([component_utl](https://github.com/shiying88/QALYs-Lost-due-to-Genital-Herpes/tree/main/tree_outputs/component_utl)) and total QALYs lost and per-case QALYs lost by sex and age ([dics](https://github.com/shiying88/QALYs-Lost-due-to-Genital-Herpes/tree/main/tree_outputs/dics)).
+- **visualization**: consisting of functions to generate figures 3-7 in the manuscript.
 
 
 ### Template Code for Running Simulation for genital HSV-1 using MacOS Terminal
